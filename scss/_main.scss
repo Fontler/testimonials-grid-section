@@ -1,0 +1,139 @@
+//Typography
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-color: hsl(210, 46%, 95%);
+}
+
+// Colors
+$purple: hsl(263, 55%, 52%);
+$gray: hsl(217, 19%, 35%);
+$black: hsl(219, 29%, 14%);
+$white: hsl(0, 0%, 100%);
+
+$lightgray: hsl(0, 0%, 81%);
+$bluegray: hsl(210, 46%, 95%);
+
+// Breakpoints
+$mobile: 375px;
+$tablet: 768px;
+$desktop: 1440px;
+
+.testimonials-grid {
+    display: grid;
+    gap: 2rem;
+    margin: 3rem auto;
+    padding: 1rem;
+    max-width: 1400px;
+    @media (min-width: $desktop) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    @media (min-width: $tablet) and (max-width: calc($desktop - 1px)) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.card {
+    border-radius: 1rem;
+    padding: 2rem;
+    color: hsla(0, 0%, 100%, 0.7);
+    &.purple {
+        background-color: $purple;
+        background-image: url( 'images/bg-pattern-quotation.svg' );
+        background-repeat: no-repeat;
+        background-position: 90% 0%;
+        @media (min-width: $desktop) {
+            grid-column: span 2;
+            grid-row: 1;
+        }
+
+    }
+    &.gray {
+        background-color: $gray;
+        @media (min-width: $desktop) {
+            grid-column: 3;
+            grid-row: 1;
+        }
+
+    }
+    &.white {
+        background-color: $white;
+        color: hsla(217, 19%, 35%, 0.75);
+        &:not(.long) {
+            @media (min-width: $desktop) {
+                grid-column: 1;
+                grid-row: 2;
+            }
+        }
+        &.long {
+            @media (min-width: $desktop) {
+                grid-column: 4;
+                grid-row: span 2;
+            }
+        }
+        .author {
+            .author-text {
+                .author-name {
+                    color: hsla(217, 19%, 35%, 1);
+                }
+                .author-title {
+                    color: hsla(217, 19%, 35%, 0.5);
+                }
+            }
+        }
+        .big-quote {
+            color: hsla(217, 19%, 35%, 1);
+        }
+    }
+    &.black {
+        @media (min-width: $desktop) {
+            grid-column: span 2;
+            grid-row: 2;
+        }
+        background-color: $black;
+        .author {
+            img {
+                border: 3px solid $purple;
+            }
+        }
+    }
+    .author {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        .author-name {
+            color: $white;
+            font-size: 1.3rem;
+        }
+        .author-title {
+            color: hsla(0, 0%, 100%, 0.5);
+            font-size: 1.1rem;
+        }
+        img {
+            border-radius: 100%;
+            border: 3px solid hsla(0, 0%, 100%, 0.5);
+        }
+    }
+    .big-quote {
+        color: $white;
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    }
+}
+
+.attribution {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 2rem;
+    text-align: center;
+    a { 
+        color: hsl(228, 45%, 44%);
+        transition: 0.5s ease all;
+        &:hover {
+            color: orange;
+        } 
+    }
+}

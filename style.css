@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-color: hsl(210, 46%, 95%);
+}
+
+.testimonials-grid {
+  display: grid;
+  gap: 2rem;
+  margin: 3rem auto;
+  padding: 1rem;
+  max-width: 1400px;
+}
+@media (min-width: 1440px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  border-radius: 1rem;
+  padding: 2rem;
+  color: hsla(0, 0%, 100%, 0.7);
+}
+.card.purple {
+  background-color: hsl(263, 55%, 52%);
+  background-image: url("images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: 90% 0%;
+}
+@media (min-width: 1440px) {
+  .card.purple {
+    grid-column: span 2;
+    grid-row: 1;
+  }
+}
+.card.gray {
+  background-color: hsl(217, 19%, 35%);
+}
+@media (min-width: 1440px) {
+  .card.gray {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
+.card.white {
+  background-color: hsl(0, 0%, 100%);
+  color: hsla(217, 19%, 35%, 0.75);
+}
+@media (min-width: 1440px) {
+  .card.white:not(.long) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+@media (min-width: 1440px) {
+  .card.white.long {
+    grid-column: 4;
+    grid-row: span 2;
+  }
+}
+.card.white .author .author-text .author-name {
+  color: hsl(217, 19%, 35%);
+}
+.card.white .author .author-text .author-title {
+  color: hsla(217, 19%, 35%, 0.5);
+}
+.card.white .big-quote {
+  color: hsl(217, 19%, 35%);
+}
+.card.black {
+  background-color: hsl(219, 29%, 14%);
+}
+@media (min-width: 1440px) {
+  .card.black {
+    grid-column: span 2;
+    grid-row: 2;
+  }
+}
+.card.black .author img {
+  border: 3px solid hsl(263, 55%, 52%);
+}
+.card .author {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.card .author .author-name {
+  color: hsl(0, 0%, 100%);
+  font-size: 1.3rem;
+}
+.card .author .author-title {
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 1.1rem;
+}
+.card .author img {
+  border-radius: 100%;
+  border: 3px solid hsla(0, 0%, 100%, 0.5);
+}
+.card .big-quote {
+  color: hsl(0, 0%, 100%);
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.attribution {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  transition: 0.5s ease all;
+}
+.attribution a:hover {
+  color: orange;
+}/*# sourceMappingURL=style.css.map */
